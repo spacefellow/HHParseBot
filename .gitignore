@@ -1,6 +1,6 @@
-#Lib
-#Scripts
-#.idea
+Lib
+Scripts
+.idea
 pyvenv.cfg
 #config.py
 #lastkey.txt
