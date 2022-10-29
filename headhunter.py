@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup as soup
 
 
 class HeadHunter:
-    url = "https://hh.ru/search/vacancy?text=Python+стажер&area=1&area=2&salary=&currency_code=RUR&experience" \
-          "=noExperience&order_by=publication_time&search_period=0&items_on_page=50&no_magic=true&L_save_area=true "
+    url = "https://hh.ru/search/vacancy?area=1&area=2&clusters=true&enable_snippets=true&experience=noExperience&" \
+          "no_magic=true&ored_clusters=true&text=стажер+python&order_by=publication_time&hhtmFrom=vacancy_search_list"
     headers = {
          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
                        "Chrome/102.0.5005.115 Safari/537.36 OPR/88.0.4412.75"}
@@ -28,7 +28,8 @@ class HeadHunter:
 
     def new_vacancies(self):
         vacancies = []
-        items = self.html.select('.g-user-content > a')
+        items = self.html.select('.serp-item__title')
+        print(items)
         for item in items:
             if item['href'] != self.lastkey:
                 vacancies.append(item['href'])
@@ -37,7 +38,7 @@ class HeadHunter:
         return vacancies
 
     def get_lastkey(self):
-        items = self.html.select('.g-user-content > a')
+        items = self.html.select('.serp-item__title')
         return items[0]['href']
 
     def update_lastkey(self, new_key):

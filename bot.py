@@ -7,8 +7,7 @@ from headhunter import HeadHunter
 logging.basicConfig(level=logging.INFO)
 
 bot = Bot(token=API_TOKEN)
-loop = asyncio.get_event_loop()
-dp = Dispatcher(bot, loop=loop)
+dp = Dispatcher(bot)
 hh = HeadHunter('lastkey.txt')
 
 
@@ -24,5 +23,6 @@ async def scheduled():
 
 
 if __name__ == '__main__':
-    dp.loop.create_task(scheduled())
+    loop = asyncio.get_event_loop()
+    loop.create_task(scheduled())
     executor.start_polling(dp, skip_updates=True)
