@@ -29,7 +29,6 @@ class HeadHunter:
     def new_vacancies(self):
         vacancies = []
         items = self.html.select('.serp-item__title')
-        print(items)
         for item in items:
             if item['href'] != self.lastkey:
                 vacancies.append(item['href'])
