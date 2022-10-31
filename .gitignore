@@ -3,6 +3,4 @@ Scripts
 .idea
 __pycache__/
 pyvenv.cfg
-#config.py
-#lastkey.txt
 venv
