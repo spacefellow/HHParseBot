@@ -1,5 +1,5 @@
 ## HHParseBot
-This is a telegram bot that sends the user new vacancies from hh.ru
+This is a telegram bot that sends the user new vacancies from hh.ru . It was implemented with Aiogram.
 
 ### Start the app in Windows
 
@@ -22,6 +22,6 @@ $ bot.py
 ```
 
 ### Learn More
-To learn how to create bots using Aiogram, read the [Aiogram documentation](https://docs.aiogram.dev/en/latest/quick_start.html).
+To learn how to create bots using Aiogram, read the [Aiogram documentation](https://docs.aiogram.dev/en/latest/quick_start.html)
 
 To deploy bot, use [Heroku](https://signup.heroku.com/login)
